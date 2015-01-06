@@ -1,0 +1,59 @@
+<form class="form-horizontal container">
+    <fieldset>
+        <legend>Login</legend>
+        <div class="form-group " >
+            <label for="username" class="col-lg-2 control-label">Username</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" id="username" placeholder="Username" ng-model="user.username">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-6">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPasswordConfirm" class="col-lg-2 control-label">Confirm Password</label>
+            <div class="col-lg-6">
+                <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Password" >
+            </div>
+        </div>
+
+        <div class="form-group " >
+            <label for="name" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="user.name">
+            </div>
+        </div>
+
+        <div class="form-group " >
+            <label for="phone" class="col-lg-2 control-label">Phone</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" id="phone" placeholder="Phone" ng-model="user.phone">
+            </div>
+        </div>
+
+        <div class="form-group " >
+            <label for="email" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-6">
+                <input type="email" class="form-control" id="email" placeholder="Email" ng-model="user.email">
+            </div>
+        </div>
+        <div class="form-group " >
+            <label  for="inputTown" class="col-lg-2 control-label">Town</label>
+            <div class="col-lg-2">
+                <select  id="inputTown" class="form-control" ng-options="town.id as town.name for town in towns" ng-model="user.townId">
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-10 col-lg-offset-2">
+            <button class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary" ng-click="register(user)">Submit</button>
+        </div>
+        </div>
+    </fieldset>
+</form>
