@@ -1,0 +1,6 @@
+<div>
+    <h3>Categories</h3>
+    <ul>
+        <li ng-repeat="category in categories | limitTo:5" ng-click="categoryClicked(category)">{{category.name}}</li>
+    </ul>
+</div>
