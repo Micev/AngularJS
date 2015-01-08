@@ -1,9 +1,9 @@
-app.controller('RegisterController', ['$scope', 'townData', function($scope, townData){
+app.controller('RegisterController', ['$scope', 'townData','userData', function($scope, townData, userData){
     townData.getTowns().$promise.then(function(data){
         $scope.towns = data;
     });
     $scope.register = function(user){
-        console.log(user)
+        userData.register(user);
     };
     $scope.pageTitle = 'Register';
 }]);
