@@ -21,10 +21,15 @@ app.factory('authentication',function(){
        localStorage.removeItem('user');
     }
 
+    function isLogged(){
+        return !!getUserData();
+    }
+
     return{
         saveUser : saveUserData,
         getUser : getUserData,
         getHeaders : getHeaders,
-        removeUser : removeUser
+        removeUser : removeUser,
+        isLogged : isLogged
     }
 });
