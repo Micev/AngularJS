@@ -7,4 +7,7 @@ app.controller('TownsController',['$scope', '$rootScope', 'townData', 'filter', 
         filter.filterByTown(town);
         $rootScope.$broadcast('townClicked', town);
     }
+    $scope.allTownClicked = function (town){
+        $rootScope.$broadcast('allTownClicked', town);
+    }
 }]);

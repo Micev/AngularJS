@@ -7,4 +7,8 @@ app.controller('CategoriesController',['$scope', '$rootScope', 'categoriesData',
         filter.filterByCategory(category);
         $rootScope.$broadcast('categoryClicked', category);
     }
+
+    $scope.allCategoryClicked = function (town){
+        $rootScope.$broadcast('allTownClicked', town);
+    }
 }]);
