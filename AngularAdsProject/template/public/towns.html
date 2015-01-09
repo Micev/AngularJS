@@ -1,6 +1,7 @@
 <div>
     <h3>Towns</h3>
     <ul>
+        <li ng-click="allTownClicked(town)">All</li>
         <li ng-repeat="town in towns | limitTo:5" ng-click="townClicked(town)">{{town.name}}</li>
     </ul>
 </div>
