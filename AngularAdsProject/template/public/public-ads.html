@@ -1,5 +1,39 @@
+
 <div id="public-ads">
-    <ul>
-        <li ng-repeat="ad in adsData.ads">{{ad.title}}</li>
+    <img src="images/loading1.gif" ng-hide="ready">
+    <ul ng-cloak>
+        <li ng-repeat="ad in adsData.ads">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2 class="pull-left">
+                            {{ad.title}}
+                        </h2>
+                    </div>
+                    <div class="col-md-4">
+                        <strong class="pull-right">
+                            {{ad.date | date: "d-MMM-yyyy"}}
+                        </strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                            <img ng-src="{{ad.imageDataUrl !='null' && ad.imageDataUrl || 'images/no_image.png' }}" class="_ad-image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="well well-sm">
+                            {{ad.text}}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span class="label label-info">Name</span><div class="well well-sm">{{ad.ownerName}}</div>
+                                <span class="label label-info">Email</span><div class="well well-sm">{{ad.ownerEmail}}</div>
+                                <span class="label label-info">Phone</span><div class="well well-sm">{{ad.ownerPhone}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
     </ul>
 </div>
