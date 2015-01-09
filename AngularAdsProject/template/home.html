@@ -5,16 +5,14 @@
 </header>
 <div id="wrapper">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div ng-include="'template/public/left-sidebar.html'" ng-if="!isLogged"></div>
             <div ng-include="'template/public/logged-sidebar.html'" ng-if="isLogged"></div>
-            <!--<left-sidebar ng-if="!isLogged"></left-sidebar>-->
-            <!--<logged-sidebar ng-if="isLogged"></logged-sidebar>-->
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <public-add><public-add>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <categories></categories>
             <towns></towns>
         </div>

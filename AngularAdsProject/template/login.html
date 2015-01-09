@@ -1,24 +1,27 @@
-<form class="form-horizontal container">
-    <fieldset>
-        <legend>Login</legend>
-        <div class="form-group " >
-            <label for="username" class="col-lg-2 control-label">Username</label>
-            <div class="col-lg-6">
-                <input type="text" class="form-control" id="username" placeholder="Username" ng-model="user.username">
+<div id="wrapper" class="row">
+    <div ng-include="'template/public/left-sidebar.html'" class="col-md-2"></div>
+    <form class="form-horizontal container col-md-8" >
+        <fieldset>
+            <legend>Login</legend>
+            <div class="form-group " >
+                <label for="username" class="col-lg-2 control-label">Username</label>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="username" required="required" placeholder="Username" ng-model="user.username" >
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-6">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password">
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-4">
+                    <input type="password" class="form-control" id="inputPassword" required="required" placeholder="Password" ng-model="user.password">
+                </div>
             </div>
-        </div>
 
-        <div class="col-lg-10 col-lg-offset-2">
-            <button class="btn btn-default">Cancel</button>
-            <button type="submit" class="btn btn-primary" ng-click="login(user)">Submit</button>
-        </div>
-        </div>
-    </fieldset>
-</form>
+            <div class="col-lg-10 col-lg-offset-2">
+                <button class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary" ng-click="login(user)">Submit</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
