@@ -1,10 +1,10 @@
-app.factory('authentication',function(){
+app.factory('authentication',function($window){
 
     function saveUserData(data){
         localStorage.setItem('user',angular.toJson(data));
     }
 
-    function getUserData(data){
+    function getUserData(){
        return angular.fromJson(localStorage.getItem('user'));
     }
 
@@ -18,7 +18,8 @@ app.factory('authentication',function(){
     }
 
     function removeUser() {
-       localStorage.removeItem('user');
+        localStorage.removeItem('user');
+        $window.location.reload();
     }
 
     function isLogged(){

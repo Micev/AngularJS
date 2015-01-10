@@ -1,4 +1,4 @@
-app.factory('adsData',['$resource', 'baseServiceUrl', function ($resource, baseServiceUrl) {
+app.factory('adsData',['$resource', 'baseServiceUrl', 'authentication', function ($resource, baseServiceUrl, authentication) {
     var resource = $resource(baseServiceUrl + 'ads:adId', {adId: '@id'}, {update: {method: 'PUT'}});
 
     function getPublicAds(filterParam){
@@ -14,7 +14,21 @@ app.factory('adsData',['$resource', 'baseServiceUrl', function ($resource, baseS
     }
 
     function addAd(ad){
-        return resource.save(ad);
+
+        var adsResource = $resource(
+            baseServiceUrl + 'user/ads',
+            null, {
+                'publishAd': {
+                    method: 'POST',
+                    headers: {
+                        Authorization: "Bearer " + authentication.getUser().access_token
+                    },
+                    data: ad
+                }
+            }
+        );
+
+        return adsResource.publishAd(ad);
     }
 
     function deleteAd(adId){
