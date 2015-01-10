@@ -15,8 +15,17 @@ app.config(['$routeProvider','localStorageServiceProvider', 'notificationsProvid
         templateUrl: 'template/register.html',
         controller: 'RegisterController'
     });
-    $routeProvider.when('/logout',{
-
+    $routeProvider.when('/user/ads',{
+        templateUrl: 'template/userAds.html',
+        controller : 'UserAdsController'
+    });
+    $routeProvider.when('/user/ads/publish',{
+        templateUrl: 'template/publishNewAd.html',
+        controller : 'PublishNewAdController'
+    });
+    $routeProvider.when('/user/ads/delete',{
+        templateUrl: 'template/deleteAd.html',
+        controller : 'UserAdsController'
     });
     $routeProvider.otherwise({
         redirectTo: '/'
