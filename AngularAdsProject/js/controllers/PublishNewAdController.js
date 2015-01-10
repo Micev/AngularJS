@@ -11,7 +11,7 @@ app.controller('PublishNewAdController',['$scope', '$location', 'adsData', 'town
         adsData.add(ad)
             .$promise
             .then(function (data) {
-                notifications.success('Ad added: ' + data);
+                notifications.success('Ad added: ' + data.title);
                 $location.path('/');
             },
             function (data) {
