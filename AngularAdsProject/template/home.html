@@ -2,6 +2,10 @@
     <h1>
         Ads - {{ pageTitle }}
     </h1>
+    <div ng-show="isLogged">
+        <span class="userName">{{authentication.getUser().username}} </span>
+        <a href="#/" class="" ng-hide="!isLogged" ng-click="authentication.removeUser()">logout</a>
+    </div>
 </header>
 <div id="wrapper">
     <div class="row">
