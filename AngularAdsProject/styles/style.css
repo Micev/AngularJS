@@ -1,10 +1,58 @@
+#wrapper{
+    padding: 10px;
+}
 header{
     background-color: #1f97dc ;
     text-align: center;
-
 }
+header h1{
+ display: inline-block;
+}
+header>div{
+    display: inline-block;
+    float: right;
+    height: 0px;
+    margin-right: 70px;
+    line-height: 105px;
+}
+
 footer p{
     text-align: center;
     background-color: #1f97dc;
     padding: 3px;
+}
+ul li{
+    list-style: none;
+}
+.container{
+    max-width: 750px;
+    background-color:  #1f97dc ;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+._ad-image{
+    width: 200px;
+    height: 250px;
+}
+fieldset legend{
+    text-align: center;
+    color: #ffffff;
+}
+h2.panel-title, h3.panel-title {
+    text-align: center;
+}
+.panel-body>p{
+    text-align: center;
+}
+.userName{
+    font-size: 18px;
+}
+.categories li:hover{
+    cursor: pointer;
+}
+textarea{
+    max-width: 280px;
+    height:100px;
+    min-height:100px;
+    max-height:200px;
 }

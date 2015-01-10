@@ -8,7 +8,18 @@ app.controller('UserAdsController',['$scope', '$location', 'adsData', 'townData'
     categoriesData.getCategories().$promise.then(function(data){
         $scope.categories = data;
     });
-    
+    $scope.add = function (ad) {
+        adsData.add(ad)
+            .$promise
+            .then(function (data) {
+                notifications.success('Ad added: ' + data);
+                $location.path('/');
+
+            },
+            function (data) {
+                notifications.error("Invalid publish ad");
+            });
+    };
     function loadUserAds(){
         adsData.getUserAds().$promise.then(function(data){
             $scope.adsData = data;
